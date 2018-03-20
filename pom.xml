@@ -6,7 +6,7 @@
 
     <groupId>com.github.iamdrq</groupId>
     <artifactId>staticlient</artifactId>
-    <version>1.2</version>
+    <version>1.1.1</version>
 
     <name>staticlient</name>
     <description>a simple client for upload static file to server.</description>

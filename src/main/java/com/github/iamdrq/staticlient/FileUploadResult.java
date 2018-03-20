@@ -5,7 +5,7 @@ import java.util.List;
 public class FileUploadResult {
     int code;
     String msg;
-    List<String> path;
+    String path;
 
     public int getCode() {
         return code;
@@ -23,11 +23,11 @@ public class FileUploadResult {
         this.msg = msg;
     }
 
-    public List<String> getPath() {
+    public String getPath() {
         return path;
     }
 
-    public void setPath(List<String> path) {
+    public void setPath(String path) {
         this.path = path;
     }
 }

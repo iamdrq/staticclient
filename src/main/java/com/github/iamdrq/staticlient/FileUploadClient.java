@@ -16,7 +16,7 @@ public class FileUploadClient {
     String token;
     Map<String, String> map;
 
-    FileUploadClient(String url,String token){
+    public FileUploadClient(String url,String token){
         this.url=url;
         this.token=token;
 
@@ -59,7 +59,7 @@ public class FileUploadClient {
                     dos.writeBytes(PREFIX + BOUNDARY + NEWLINE); // 像请求体中写分割线，就是前缀+分界线+换行
                     dos.writeBytes("Content-Disposition: form-data; " + "name=\"" + key + "\"" + NEWLINE); // 拼接参数名，格式就是Content-Disposition: form-data; name="key" 其中key就是当前循环的键值对的键，别忘了最后的换行
                     dos.writeBytes(NEWLINE); // 空行，一定不能少，键和值之间有一个固定的空行
-                    dos.writeBytes(URLEncoder.encode(value.toString(), "utf-8")); // 将值写入
+                    dos.writeBytes(URLEncoder.encode(value, "utf-8")); // 将值写入
                     //或者写成：dos.write(value.toString().getBytes(charset));
                     dos.writeBytes(NEWLINE); // 换行
                 } // 所有循环完毕，就把所有的键值对都写入了
@@ -97,7 +97,8 @@ public class FileUploadClient {
             Integer code=(Integer)map.get("res");
             fileUploadResult.setCode(code);
             if(code==1){
-                fileUploadResult.setPath((List<String>) map.get("data"));
+                List<String> data=(List<String>)map.get("data");
+                fileUploadResult.setPath(data.size()>0?data.get(0):"");
             }
             else{
                 fileUploadResult.setMsg(map.get("data").toString());
@@ -113,8 +114,8 @@ public class FileUploadClient {
 
     public static void main(String[] args) throws Exception{
         FileUploadClient fileUploadClient=new FileUploadClient("url","token");
-        File file=new File("C:\\Users\\drq\\Desktop\\1.php");
-        FileUploadResult fileUploadResult=fileUploadClient.upload("test",file.getName(),new FileInputStream(file));
+        File file=new File("C:\\Users\\drq\\Desktop\\index.php");
+        FileUploadResult fileUploadResult=fileUploadClient.upload("test/123",file.getName(),new FileInputStream(file));
         System.out.print(fileUploadResult);
     }
 
