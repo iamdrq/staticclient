@@ -1,8 +1,8 @@
 # Staticlient
 
 ### Example：
-FileUpload fileUpload=new FileUpload("url","token","path");
+FileUploadClient fileUploadClient=new FileUploadClient("url","token");
 <br>
-File file=new File("C:\\Users\\durui\\Desktop\\1.txt");
+File file=new File("C:\\Users\\drq\\Desktop\\1.txt");
 <br>
-fileUpload.upload("1.txt",new FileInputStream(file));
+FileUploadResult fileUploadResult=fileUploadClient.upload("test",file.getName(),new FileInputStream(file));
