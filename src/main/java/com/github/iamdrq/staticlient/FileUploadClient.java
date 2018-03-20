@@ -1,3 +1,5 @@
+package com.github.iamdrq.staticlient;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;

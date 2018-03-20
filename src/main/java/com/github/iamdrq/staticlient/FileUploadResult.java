@@ -1,3 +1,5 @@
+package com.github.iamdrq.staticlient;
+
 import java.util.List;
 
 public class FileUploadResult {
