@@ -1,5 +1,5 @@
 # Staticlient
-
+This a simple client for upload static to server
 ### Example：
 FileUploadClient fileUploadClient=new FileUploadClient("url","token");
 <br>
