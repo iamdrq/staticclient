@@ -38,8 +38,8 @@ public class FileUploadClient {
             httpURLConnection.setRequestProperty("connection","Keep-Alive");
             httpURLConnection.setRequestProperty("user-agent","Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
             httpURLConnection.setRequestProperty("Content-Type","multipart/form-data; boundary=" + BOUNDARY);
-            httpURLConnection.setConnectTimeout(30000);
-            httpURLConnection.setReadTimeout(30000);
+            httpURLConnection.setConnectTimeout(3600*1000);
+            httpURLConnection.setReadTimeout(3600*1000);
             // 发送POST请求必须设置如下两行
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);

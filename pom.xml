@@ -6,7 +6,7 @@
 
     <groupId>com.github.iamdrq</groupId>
     <artifactId>staticlient</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
 
     <name>staticlient</name>
     <description>a simple client for upload static file to server.</description>
@@ -37,7 +37,7 @@
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
 
         <!-- versions -->
-        <jackson.version>2.9.4</jackson.version>
+        <jackson.version>2.9.7</jackson.version>
     </properties>
 
     <dependencies>
